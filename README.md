@@ -1,6 +1,7 @@
 # Analiza podatkov s programom R, 2018/19
 
-Avtor: Sara Papež
+Avtor: Sara Papež bla bla bla
+sdksdks
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 

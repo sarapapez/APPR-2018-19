@@ -10,7 +10,7 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
 ## Tematika
 
-V projektni nalogi bom analizirala podjetja v Sloveniji. Za začetek bom primerjala število podjetij po posameznih regijah med letoma 2006 in 2016. Za vsako regijo bom ugotovila koliko je novonastalih podjetij in koliko je podjetij, ki so prenahala s poslovanjem. Analizirala bom tudi koliko je v Sloveniji hitrorastočih podjetij in število ljudi, ki so zaposleni v podjetjih. 
+V projektni nalogi bom analizirala podjetja v Sloveniji. Za začetek bom primerjala število podjetij po posameznih regijah med letoma 2006 in 2016 in analizirala v kateri regiji se je v tem času število podjetij najbolj povečalo in kje najbolj zmanjšalo. Za vsako regijo bom ugotovila koliko je novonastalih podjetij in koliko je podjetij, ki so prenahala s poslovanjem. Analizirala bom tudi koliko je v Sloveniji hitrorastočih podjetij. Poskusila bom najti povezavo med novonastalimi in hitrorastočimi podjetji. Na koncu pa bom analizirala še število ljudi, ki so zaposleni v podjetjih v posameznih regijah.
 
 * Tabela 1: ŠTEVILO PODJETIJ
             - regija, leto, število podjetij

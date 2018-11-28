@@ -13,15 +13,15 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 V projektni nalogi bom analizirala podjetja v Sloveniji. Za začetek bom primerjala število podjetij po posameznih regijah med letoma 2006 in 2016. Za vsako regijo bom ugotovila koliko je novonastalih podjetij in koliko je podjetij, ki so prenahala s poslovanjem. Analizirala bom tudi koliko je v Sloveniji hitrorastočih podjetij in število ljudi, ki so zaposleni v podjetjih. 
 
 * Tabela 1: ŠTEVILO PODJETIJ
-            regija, leto, število podjetij
+            - regija, leto, število podjetij
 * Tabela 2: ŠTEVILO NOVONASTALIH PODJETIJ
-            regija, leto, število novonastalih podjetij
+            - regija, leto, število novonastalih podjetij
 * Tabela 3: ŠTEVILO PODJETIJ, KI SO PRENEHALA S POSLOVANJEM 
-            regija, leto, število podjetij, ki so prenehala s poslovanjem
+            - regija, leto, število podjetij, ki so prenehala s poslovanjem
 * Tabela 4: ŠTEVILO HITRORASTOČIH PODJETIJ
-            regija, leto, število hitrorastočih podjetij
+            - regija, leto, število hitrorastočih podjetij
 * Tabela 5: ŠTEVILO LJUDI, KI SO ZAPOSLENA V PODJETJIH
-            regija, leto, število ljudi, ki so zaposleni v podjetjih
+            - regija, leto, število ljudi, ki so zaposleni v podjetjih
             
 Vir podatkov: https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp
 

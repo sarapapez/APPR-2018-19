@@ -26,9 +26,20 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 # Izbira teme
 
-Za vzorec bomo prikazali nekaj podatkov o slovenskih občinah.
+V projektni nalogi bom analizirala podjetja v Sloveniji. Za začetek bom primerjala število podjetij po posameznih regijah med letoma 2006 in 2016 in analizirala v kateri regiji se je v tem času število podjetij najbolj povečalo in kje najbolj zmanjšalo. Za vsako regijo bom ugotovila koliko je novonastalih podjetij in koliko je podjetij, ki so prenahala s poslovanjem. Analizirala bom tudi koliko je v Sloveniji hitrorastočih podjetij. Poskusila bom najti povezavo med novonastalimi in hitrorastočimi podjetji. Na koncu pa bom analizirala še število ljudi, ki so zaposleni v podjetjih v posameznih regijah.
 
-![](slike/grb.png)
+* Tabela 1: ŠTEVILO PODJETIJ
+            - regija, leto, število podjetij
+* Tabela 2: ŠTEVILO NOVONASTALIH PODJETIJ
+            - regija, leto, število novonastalih podjetij
+* Tabela 3: ŠTEVILO PODJETIJ, KI SO PRENEHALA S POSLOVANJEM 
+            - regija, leto, število podjetij, ki so prenehala s poslovanjem
+* Tabela 4: ŠTEVILO HITRORASTOČIH PODJETIJ
+            - regija, leto, število hitrorastočih podjetij
+* Tabela 5: ŠTEVILO LJUDI, KI SO ZAPOSLENA V PODJETJIH
+            - regija, leto, število ljudi, ki so zaposleni v podjetjih
+            
+Vir podatkov: https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp
 
 ***
 
@@ -88,7 +99,7 @@ ggplot() + geom_polygon(data=left_join(zemljevid, povprecja, by=c("OB_UIME"="obc
 # Napredna analiza podatkov
 
 ```{r analiza, echo=FALSE, message=FALSE}
-source("analiza/analiza.r", encoding="UTF-8")
+#source("analiza/analiza.r", encoding="UTF-8")
 ```
 
 Spodnji graf prikazuje povezavo med številom naselij in površino občine.

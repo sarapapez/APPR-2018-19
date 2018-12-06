@@ -1,14 +1,29 @@
-# Analiza podatkov s programom R, 2018/19
+# Podjetnost v Sloveniji
+
+Avtor: Sara Papež 
+
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
-* [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/jaanos/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
-* [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/jaanos/APPR-2018-19/master?urlpath=rstudio) RStudio
+* [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/sarapapez/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
+* [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/sarapapez/APPR-2018-19/master?urlpath=rstudio) RStudio
 
 ## Tematika
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal.
-Tukaj boste napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+V projektni nalogi bom analizirala podjetja v Sloveniji. Za začetek bom primerjala število podjetij po posameznih regijah med letoma 2006 in 2016 in analizirala v kateri regiji se je v tem času število podjetij najbolj povečalo in kje najbolj zmanjšalo. Za vsako regijo bom ugotovila koliko je novonastalih podjetij in koliko je podjetij, ki so prenahala s poslovanjem. Analizirala bom tudi koliko je v Sloveniji hitrorastočih podjetij. Poskusila bom najti povezavo med novonastalimi in hitrorastočimi podjetji. Na koncu pa bom analizirala še število ljudi, ki so zaposleni v podjetjih v posameznih regijah.
+
+* Tabela 1: ŠTEVILO PODJETIJ
+            - regija, leto, število podjetij
+* Tabela 2: ŠTEVILO NOVONASTALIH PODJETIJ
+            - regija, leto, število novonastalih podjetij
+* Tabela 3: ŠTEVILO PODJETIJ, KI SO PRENEHALA S POSLOVANJEM 
+            - regija, leto, število podjetij, ki so prenehala s poslovanjem
+* Tabela 4: ŠTEVILO HITRORASTOČIH PODJETIJ
+            - regija, leto, število hitrorastočih podjetij
+* Tabela 5: ŠTEVILO LJUDI, KI SO ZAPOSLENA V PODJETJIH
+            - regija, leto, število ljudi, ki so zaposleni v podjetjih
+            
+Vir podatkov: https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp
 
 ## Program
 

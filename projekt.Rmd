@@ -76,7 +76,11 @@ Uvozilia sem podatke o podjetjih v Sloveniji v obliki CSV s statističnega urada
   - `leto` - spremenljivka: leto v katerem gledamo število zaposlenih v podjetjih(numeric)
   - `stevilo` - meritev: število zaposlenih v podjetjih v posamezni regiji(numeric)
 
+Vir podatkov: [SURS](https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp)
 
-
+Graf prikazuje delež ločenih odpadkov (od nastalih) po regijah od leta 2002 do 2017:
+```{r stevilo_podjetij, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+ggplot(stevilo_podjetij %>% aes(x=leto, y=stevilo, group=regije, color=regije) + geom_line() + xlab("Leto") + ylab("Delež ločenih odpadkov (od nastalih) v %") + ggtitle("Graf deleža ločenih odpadkov po regijah") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+```
 ***
 

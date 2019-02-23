@@ -11,3 +11,4 @@ zemljevid <- fortify(zemljevid)
 # Izračunamo povprečno velikost družine
 povprecja <- druzine %>% group_by(obcina) %>%
   summarise(povprecje=sum(velikost.druzine * stevilo.druzin) / sum(stevilo.druzin))
+

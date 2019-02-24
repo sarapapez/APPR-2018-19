@@ -45,7 +45,7 @@ Vir podatkov: https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp
 
 # Obdelava, uvoz in čiščenje podatkov
 
-```{r uvoz, echo=FALSE, message=FALSE}
+```{r uvoz, echo=FALSE, message=FALSE, warning=FALSE}
 source("uvoz/uvoz.r", encoding="UTF-8")
 ```
 
@@ -78,9 +78,9 @@ Uvozilia sem podatke o podjetjih v Sloveniji v obliki CSV s statističnega urada
 
 Vir podatkov: [SURS](https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp)
 
-Graf prikazuje delež ločenih odpadkov (od nastalih) po regijah od leta 2002 do 2017:
-```{r stevilo_podjetij, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-ggplot(stevilo_podjetij %>% aes(x=leto, y=stevilo, group=regije, color=regije) + geom_line() + xlab("Leto") + ylab("Delež ločenih odpadkov (od nastalih) v %") + ggtitle("Graf deleža ločenih odpadkov po regijah") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+Graf prikazuje število podjetij, ki so prenehala z delovanjem po regijah od leta 2008 do 2016:
+```{r stevilo_podjetij_ki_so_prenehala_z_delovanjem, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilo, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
 ```
 ***
 

@@ -114,7 +114,3 @@ graf2 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
     main="Število zaposlenih v podjetjih leta 2016")
 
 
-
-
-
-

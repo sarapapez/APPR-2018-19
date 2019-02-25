@@ -113,4 +113,10 @@ lbls <- paste(lbls,"%",sep="") # ad % to labels
 graf2 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
     main="Število zaposlenih v podjetjih leta 2016")
 
+#histogram stevila novonastalih podjetij
+# Create data
+data=data.frame(stevilo_novonastalih_podjetij)
+# Barplot
+ggplot(data, aes(x=leto, y=stevilonovonastalih)) + geom_bar(color="red",fill="red",stat = "identity")
+
 

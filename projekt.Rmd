@@ -80,7 +80,19 @@ Vir podatkov: [SURS](https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp)
 
 Graf prikazuje število podjetij, ki so prenehala z delovanjem po regijah od leta 2008 do 2016:
 ```{r stevilo_podjetij_ki_so_prenehala_z_delovanjem, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilo, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilopropadlih, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
 ```
 ***
+
+
+#Analiza in vizualizacija podatkov
+```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+source("vizualizacija/vizualizacija.r", encoding="UTF-8")
+
+```
+
+```{r graf1, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+
+```
+
 

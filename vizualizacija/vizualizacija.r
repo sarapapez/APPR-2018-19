@@ -35,10 +35,10 @@ stevilo_brezposelnih.stevilo.propadlih.podjetij <-right_join(stevilo_zaposlenih_
 
 #graf povezave med številom podjetji in stevilom zaposlenih v podjetjih
 o <- (stevilo_zaposlenih_v_podjetjih)
-u <- (stevilo_novonastalih_podjetij)
+u <- (stevilo_podjetij)
 b <- right_join(o,u)
 
-graf9 <- ggplot(b) + geom_point(aes(x=stevilonovonastalih, y=stevilozaposlenih, color=regije)) + geom_smooth(aes(x=stevilonovonastalih, y=stevilozaposlenih)) + xlab("Leto") + 
+graf9 <- ggplot(b) + geom_point(aes(x=stevilopodjetij, y=stevilozaposlenih, color=regije)) + geom_smooth(aes(x=stevilopodjetij, y=stevilozaposlenih)) + xlab("Leto") + 
   ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                     "Jugovzhodna Slovenija",
@@ -46,17 +46,45 @@ graf9 <- ggplot(b) + geom_point(aes(x=stevilonovonastalih, y=stevilozaposlenih, 
                                                "Primorsko-notranjska", "Savinjska", "Zasavska")) 
 
 
-#graf povezave med 
-i <- (stevilo_hitrorastocih_podjetij)
-r <- (stevilo_novonastalih_podjetij)
+#graf povezave med stevilom brezposelnih v sloveniji in 
+#stevilom podjetji ki so prenehala z delovanjem
+i <- (stevilo_brezposelnih)
+r <- (stevilo_podjetij_ki_so_prenehala_z_delovanjem)
 hh <- right_join(i,r)
-graf9 <- ggplot(b, aes(x=stevilonovonastalih, y=stevilozaposlenih)) +  geom_point() + geom_smooth() + xlab("Leto") + 
+
+graf7 <- ggplot(hh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopropadlih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopropadlih)) + xlab("Leto") + 
   ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                                "Jugovzhodna Slovenija",
                                                "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
-                                               "Primorsko-notranjska", "Savinjska", "Zasavska")) 
+                                              "Primorsko-notranjska", "Savinjska", "Zasavska"))
 
+
+#se ena povezava
+
+ii <- (stevilo_brezposelnih)
+rr <- (stevilo_novonastalih_podjetij)
+hhh <- right_join(ii,rr)
+
+graf00 <- ggplot(hhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilonovonastalih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilonovonastalih)) + xlab("Leto") + 
+  ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
+  scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
+                                               "Jugovzhodna Slovenija",
+                                               "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
+                                               "Primorsko-notranjska", "Savinjska", "Zasavska"))
+
+
+#se ena povezava
+iii <- (stevilo_brezposelnih)
+rrr <- (stevilo_podjetij)
+hhhh <- right_join(iii,rrr)
+
+graf000 <- ggplot(hhhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopodjetij, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopodjetij)) + xlab("Leto") + 
+  ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
+  scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
+                                               "Jugovzhodna Slovenija",
+                                               "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
+                                               "Primorsko-notranjska", "Savinjska", "Zasavska"))
 
 
 
@@ -85,16 +113,6 @@ lbls <- paste(lbls,"%",sep="") # ad % to labels
 graf2 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
     main="Število zaposlenih v podjetjih leta 2016")
 
-
-
-graf9 <- ggplot(stevilo_hitrorastocih_podjetij, aes(x=leto, y=stevilo,
-                                                    group=regije, color=regije)) + geom_line() + xlab("Leto") + 
-  ylab("Število podjetij") + 
-  ggtitle("Število podjetij") + 
-  scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija",
-                                               "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
-                                               "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text
-                                                                                                         (angle = 90, vjust = 0.3, hjust=1))
 
 
 

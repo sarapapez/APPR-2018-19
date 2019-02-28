@@ -118,7 +118,7 @@ V poročilo sem vključila tudi graf števila hitrorastočih podjetij, saj se mi
 
 Hitrorastoče podjetje je podjetje z več kot 10-odstotno povprečno letno rastjo v triletnem obdobju, ki ima v prvem letu spremljanja triletne rasti vsaj 10 zaposlenih. Rast se meri s številom zaposlenih.
 
-Iz grafa vidmo da se je število hitrorastočih podjetij od leta 2006 do 2007 zmanjšalo v čisto vseh regijah. V nekaterij regijah se je potem ta številka naprej še zmanjševala. V Zasavski, Savinjski, Primorsko-notranjski in Posavski regiji pa je med letoma 2007 in 2008 prišlo do naglega vzpona, nato pa spet do padca. Enak interval se je potem ponovno zgodil md letoma 2011 in 2013.
+Iz grafa vidimo, da je bilo največ hitrorastočih podjetij leta 2006, potem pa je število padalo do leta 2009. Od leta 2009 naprej pa je bilo število dokaj konstantno. v zadnjih letih lahko vidimo rahel dvig.
 
 ```{r graf2, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 graf2

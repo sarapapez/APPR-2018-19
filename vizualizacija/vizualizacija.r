@@ -46,7 +46,7 @@ u <- (stevilo_podjetij)
 b <- right_join(o,u)
 
 graf3 <- ggplot(b) + geom_point(aes(x=stevilopodjetij, y=stevilozaposlenih, color=regije)) + geom_smooth(aes(x=stevilopodjetij, y=stevilozaposlenih)) + xlab("Število podjetij") + 
-  ylab("Število zaposlenih v podjetijh") + ggtitle("Število podjetij v primerjavi z številom zaposlenih") + 
+  ylab("Število zaposlenih v podjetijh") + ggtitle("Število podjetij v primerjavi s številom zaposlenih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                     "Jugovzhodna Slovenija",
                                                "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
@@ -59,8 +59,8 @@ i <- (stevilo_brezposelnih)
 r <- (stevilo_podjetij_ki_so_prenehala_z_delovanjem)
 hh <- right_join(i,r)
 
-graf4 <- ggplot(hh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopropadlih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopropadlih)) + xlab("Leto") + 
-  ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
+graf4 <- ggplot(hh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopropadlih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopropadlih)) + xlab("Število brezposelnih") + 
+  ylab("Število podjetji, ki so prenehala z delovanjem") + ggtitle("Število brezposelnih v primerjavi s propadlimi podjetji") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                                "Jugovzhodna Slovenija",
                                                "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
@@ -127,4 +127,10 @@ data=data.frame(stevilo_novonastalih_podjetij)
 # Barplot
 graf7 <- ggplot(data, aes(x=leto, y=stevilonovonastalih)) + geom_bar(color="red",fill="red",stat = "identity")
 
+# Uvozimo zemljevid.
+zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
+                             "SVN_adm1", mapa = "zemljevid_Slovenije", encoding = "UTF-8")
+zemljevid$NAME_1 <- c("Gorenjska", "Goriska","Jugovzhodna_Slovenija", "Koroska", "Primorsko-notranjska", "Obalno-kraska", "Osrednjeslovenska", "Podravska", "Pomurska", "Savinjska", "Posavska", "Zasavska")
+
+zemljevid <- fortify(zemljevid)   
 

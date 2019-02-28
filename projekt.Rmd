@@ -119,20 +119,23 @@ V poročilo sem vključila tudi graf števila hitrorastočih podjetij, saj se mi
 
 Hitrorastoče podjetje je podjetje z več kot 10-odstotno povprečno letno rastjo v triletnem obdobju, ki ima v prvem letu spremljanja triletne rasti vsaj 10 zaposlenih. Rast se meri s številom zaposlenih.
 
-Če primerjamo regije glede na število hitrorastočih podjetij
-
+Iz grafa vidmo da se je število hitrorastočih podjetij od leta 2006 do 2007 zmanjšalo v čisto vseh regijah. V nekaterij regijah se je potem ta številka naprej še zmanjševala. V Zasavski, Savinjski, Primorsko-notranjski in Posavski regiji pa je med letoma 2007 in 2008 prišlo do naglega vzpona, nato pa spet do padca. Enak interval se je potem ponovno zgodil md letoma 2011 in 2013.
 
 ```{r graf2, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 graf2
 
 ```
 
+Nato sem se odločila pokazati še dve povezavi. Na prvem grafu je prikazana povezava med številom zaposlenih v podjetjih in številom podjetij. Iz grafa se vidi, da je povezava. Več kot je podjetij, več je tudi zaposlenih v podjejih. 
 
 ```{r graf3, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 graf3
 
 ```
 
+Zanimalo pa me je tudi, če obstaja povezava med številom brezposelnih v Sloveniji in številom podjetij, ki so prenehala z delovanjem. Želela sem ugotoviti, če je delež zaposlenih v podjetjih tako velik, da propad podjetji vpliva na večjo brezposelnost.
+
+Iz grafa vidimo, da sta ta dva dejavnika med sabo povezana. Če propade več podjetij je tudi brezposelnost v Sloveniji večja.
 
 ```{r graf4, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 graf4

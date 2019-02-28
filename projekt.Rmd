@@ -81,6 +81,14 @@ Vir podatkov: [SURS](https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp)
 
 Graf prikazuje število podjetij, ki so prenehala z delovanjem po regijah od leta 2008 do 2016:
 
+
+```{r stevilo_podjetij_ki_so_prenehala_z_delovanjem, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilopropadlih, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+
+
+```
+
+
 ***
 
 
@@ -89,12 +97,29 @@ Graf prikazuje število podjetij, ki so prenehala z delovanjem po regijah od let
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 
 ```
+ 
+Ker so moja rdeča nit podjetja sem se za začetek odločila analizirati število podjetij v Sloveniji od leta  2006 do 2016. Iz grafa lahko vidimo, da je število podjetji v večini slovenskih regij počasi naraščalo. Izjema je Osrednjeslovenska regija,kjer je bila ta rast bolj strma. Razlika med številom podjetij je zelo očitna. Najmanj podjetij je v Zasavski regiji, kar je loigično, saj je tudi najmanjša izmed vseh. Daleč največ pa jih je v Osrednjeslovenski regiji.
+
+Presenetilo me je, da je razlika med številom podjetij v Osrednjeslovenski regiji (v kateri leži glavno mesto Slovenije - Ljubljana) v primerjavi z Pomursko regijo (kjer leži drugo največje mesto Slovenije - Maribor) tako velika. Ti dve regiji sta si po velikosti zelo podobni, število podjetij pa se zelo razlikuje. Leta 2006 je bilo v Osrednjeslovenski regiji 2x več podjetij kakor v Pomurski. Leta 2016 pa kar 3x več.
 
 
 ```{r graf1, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 graf1
 
 ```
+
+Ker se iz grafa, ki prikazuje število podjetij, ne vidi nobenih poslebnih odstopanj po letih, ampak je rast linearna sem se odločila ugotoviti katera leta od 2006 do 2016 so bila najbolj prelomna za slovenska podjetja. Pogledala sem kdaj je bilo ustanovljenih največ novih podjetij in kdaj najmanj. Iz histograma se prav tako kot v prejšnem grafu vidi, da je število podjetij naraščalo. Opazimo pa tudi, da je bilo največ na novo ustanovljenih podjetij leta 2013, najmanj pa leta 2006. Glede na to, da je bila leta 2008 v Sloveniji kriza, sem pričakovala, da bo tega leta tudi najmanj na novo ustanovljenih podjetij. Izkazalo se je, da je bila moja domneva napačna.
+
+```{r graf7, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+graf7
+
+```
+
+V poročilo sem vključila tudi graf števila hitrorastočih podjetij, saj se mi zdi, da je res zanimiv. 
+
+Hitrorastoče podjetje je podjetje z več kot 10-odstotno povprečno letno rastjo v triletnem obdobju, ki ima v prvem letu spremljanja triletne rasti vsaj 10 zaposlenih. Rast se meri s številom zaposlenih.
+
+Če primerjamo regije glede na število hitrorastočih podjetij
 
 
 ```{r graf2, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
@@ -117,8 +142,6 @@ graf4
 
 
 
-```{r graf7, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-graf7
 
-```
+
 

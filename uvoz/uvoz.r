@@ -18,7 +18,7 @@ K <- read_csv2("podatki/stevilo_podjetij_ki_so_prenehala_z_delovanjem1.csv", col
                                                grouping_mark = "."),
                n_max = 12)
 
-F <- read_csv2("podatki/stevilo_hitrorastocih_podjetij1.csv", col_names=c("regije", 2006:2016),
+F <- read_csv2("podatki/stevilo_hitrorastocih_podjetij1.csv", col_names=c("regije", 2006:2014),
                skip=5, na="...", locale=locale(encoding="Windows-1250", 
                                                decimal_mark = ",",
                                                grouping_mark = "."),
@@ -47,7 +47,7 @@ stevilo_zaposlenih_v_podjetjih <- melt(G, id.vars="regije", measure.vars=names(M
                          value.name="stevilozaposlenih", na.rm=TRUE)
 stevilo_podjetij_ki_so_prenehala_z_delovanjem <- melt(K, id.vars="regije", measure.vars=names(M)[-1], variable.name="leto", 
                          value.name="stevilopropadlih", na.rm=TRUE)
-stevilo_hitrorastocih_podjetij <- melt(F, id.vars="regije", measure.vars=names(M)[-1], variable.name="leto", 
+stevilo_hitrorastocih_podjetij <- melt(F, id.vars="regije", measure.vars=names(F)[-1], variable.name="leto", 
                          value.name="stevilo", na.rm=TRUE)
 stevilo_brezposelnih <- melt(S, id.vars="regije", measure.vars=names(S)[-1], variable.name="leto", 
                                        value.name="stevilobrezposelnih", na.rm=TRUE)

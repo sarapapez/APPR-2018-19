@@ -1,8 +1,15 @@
+#začetni graf
+mojgraf <- ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilopropadlih, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+
+
+
+
+
 #najprej sem naplošno pogledala koliko podjetij imamo v sloveniji..izkjazalo se je da jih je najvec v 
 #osrednjeslovenski regiji. ker je ta tudi največja ima največ podjetij. zato bom to regijo bolj podrobno 
 #analizirala.
 
-graf4 <-  ggplot(stevilo_podjetij, aes(x=leto, y=stevilopodjetij,
+graf1 <-  ggplot(stevilo_podjetij, aes(x=leto, y=stevilopodjetij,
                                                      group=regije, color=regije)) + geom_line() + xlab("Leto") + 
   ylab("Število podjetij") + 
   ggtitle("Število podjetij") + 
@@ -15,14 +22,14 @@ graf4 <-  ggplot(stevilo_podjetij, aes(x=leto, y=stevilopodjetij,
 
 
 
-graf3 <- ggplot(stevilo_hitrorastocih_podjetij, aes(x=leto, y=stevilo,
+graf2 <- ggplot(stevilo_hitrorastocih_podjetij, aes(x=leto, y=stevilo,
         group=regije, color=regije)) + geom_line() + xlab("Leto") + 
-  ylab("Število podjetij") + 
-  ggtitle("Število podjetij") + 
+  ylab("Število hitrorastočih podjetij") + 
+  ggtitle("Število hitrorastočih podjetij") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija",
 "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
 "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text
-                    (angle = 90, vjust = 0.3, hjust=1))
+                    (angle = 90, vjust = 0.1, hjust=1))
 
 
 
@@ -38,8 +45,8 @@ o <- (stevilo_zaposlenih_v_podjetjih)
 u <- (stevilo_podjetij)
 b <- right_join(o,u)
 
-graf9 <- ggplot(b) + geom_point(aes(x=stevilopodjetij, y=stevilozaposlenih, color=regije)) + geom_smooth(aes(x=stevilopodjetij, y=stevilozaposlenih)) + xlab("Leto") + 
-  ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
+graf3 <- ggplot(b) + geom_point(aes(x=stevilopodjetij, y=stevilozaposlenih, color=regije)) + geom_smooth(aes(x=stevilopodjetij, y=stevilozaposlenih)) + xlab("Število podjetij") + 
+  ylab("Število zaposlenih v podjetijh") + ggtitle("Število podjetij v primerjavi z številom zaposlenih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                     "Jugovzhodna Slovenija",
                                                "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska",
@@ -52,7 +59,7 @@ i <- (stevilo_brezposelnih)
 r <- (stevilo_podjetij_ki_so_prenehala_z_delovanjem)
 hh <- right_join(i,r)
 
-graf7 <- ggplot(hh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopropadlih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopropadlih)) + xlab("Leto") + 
+graf4 <- ggplot(hh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopropadlih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopropadlih)) + xlab("Leto") + 
   ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                                "Jugovzhodna Slovenija",
@@ -66,7 +73,7 @@ ii <- (stevilo_brezposelnih)
 rr <- (stevilo_novonastalih_podjetij)
 hhh <- right_join(ii,rr)
 
-graf00 <- ggplot(hhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilonovonastalih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilonovonastalih)) + xlab("Leto") + 
+graf5 <- ggplot(hhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilonovonastalih, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilonovonastalih)) + xlab("Leto") + 
   ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                                "Jugovzhodna Slovenija",
@@ -79,7 +86,7 @@ iii <- (stevilo_brezposelnih)
 rrr <- (stevilo_podjetij)
 hhhh <- right_join(iii,rrr)
 
-graf000 <- ggplot(hhhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopodjetij, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopodjetij)) + xlab("Leto") + 
+graf6 <- ggplot(hhhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopodjetij, color=regije)) + geom_smooth( aes(x=stevilobrezposelnih, y=stevilopodjetij)) + xlab("Leto") + 
   ylab("Število novonastalih podjetij") + ggtitle("Število zaposlenih v podjetjih") + 
   scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška",
                                                "Jugovzhodna Slovenija",
@@ -93,30 +100,30 @@ graf000 <- ggplot(hhhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopodjeti
 
 
 # Pie Chart with Percentages
-slices <- c(24250,85003 , 17827,75609, 9814,13440,35978,10574,210352,52094,31942,29149) 
-lbls <- c("Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska","Posavska","Jugovzhodna Slovenija","Primorsko-notranjska","Osrednjeslovenska","Gorenjska","Goriška","Obalno-kraška")
-pct <- round(slices/sum(slices)*100)
-lbls <- paste(lbls, pct) # add percents to labels 
-lbls <- paste(lbls,"%",sep="") # ad % to labels 
-graf1 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
-    main="Število zaposlenih v podjetjih leta 2006")
+#slices <- c(24250,85003 , 17827,75609, 9814,13440,35978,10574,210352,52094,31942,29149) 
+#lbls <- c("Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska","Posavska","Jugovzhodna Slovenija","Primorsko-notranjska","Osrednjeslovenska","Gorenjska","Goriška","Obalno-kraška")
+#pct <- round(slices/sum(slices)*100)
+#lbls <- paste(lbls, pct) # add percents to labels 
+#lbls <- paste(lbls,"%",sep="") # ad % to labels 
+#graf1 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
+ #   main="Število zaposlenih v podjetjih leta 2006")
 
 
 #2.graf
 
 # Pie Chart with Percentages
-slices <- c(20394,83259, 15486,70936, 9329,14368,14368,10945,214422,50211,29040,28843) 
-lbls <- c("Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska","Posavska","Jugovzhodna Slovenija","Primorsko-notranjska","Osrednjeslovenska","Gorenjska","Goriška","Obalno-kraška")
-pct <- round(slices/sum(slices)*100)
-lbls <- paste(lbls, pct) # add percents to labels 
-lbls <- paste(lbls,"%",sep="") # ad % to labels 
-graf2 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
-    main="Število zaposlenih v podjetjih leta 2016")
+#slices <- c(20394,83259, 15486,70936, 9329,14368,14368,10945,214422,50211,29040,28843) 
+#lbls <- c("Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska","Posavska","Jugovzhodna Slovenija","Primorsko-notranjska","Osrednjeslovenska","Gorenjska","Goriška","Obalno-kraška")
+#pct <- round(slices/sum(slices)*100)
+#lbls <- paste(lbls, pct) # add percents to labels 
+#lbls <- paste(lbls,"%",sep="") # ad % to labels 
+#graf2 <- pie(slices,labels = lbls, col=rainbow(length(lbls)),
+ #   main="Število zaposlenih v podjetjih leta 2016")
 
 #histogram stevila novonastalih podjetij
 # Create data
 data=data.frame(stevilo_novonastalih_podjetij)
 # Barplot
-ggplot(data, aes(x=leto, y=stevilonovonastalih)) + geom_bar(color="red",fill="red",stat = "identity")
+graf7 <- ggplot(data, aes(x=leto, y=stevilonovonastalih)) + geom_bar(color="red",fill="red",stat = "identity")
 
 

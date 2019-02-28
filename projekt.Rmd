@@ -38,8 +38,9 @@ V projektni nalogi bom analizirala podjetja v Sloveniji. Za začetek bom primerj
             - regija, leto, število hitrorastočih podjetij
 * Tabela 5: ŠTEVILO LJUDI, KI SO ZAPOSLENA V PODJETJIH
             - regija, leto, število ljudi, ki so zaposleni v podjetjih
-            
-Vir podatkov: https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp
+* Tabela 6: ŠTEVILO BREZPOSELNIH V SLOVENIJI
+            -regija, leto, stevilo brezposelnih
+   
 
 ***
 
@@ -79,9 +80,7 @@ Uvozilia sem podatke o podjetjih v Sloveniji v obliki CSV s statističnega urada
 Vir podatkov: [SURS](https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp)
 
 Graf prikazuje število podjetij, ki so prenehala z delovanjem po regijah od leta 2008 do 2016:
-```{r stevilo_podjetij_ki_so_prenehala_z_delovanjem, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilopropadlih, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
-```
+
 ***
 
 
@@ -91,8 +90,35 @@ source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 
 ```
 
+
 ```{r graf1, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+graf1
 
 ```
 
+
+```{r graf2, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+graf2
+
+```
+
+
+```{r graf3, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+graf3
+
+```
+
+
+```{r graf4, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+graf4
+
+```
+
+
+
+
+```{r graf7, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+graf7
+
+```
 

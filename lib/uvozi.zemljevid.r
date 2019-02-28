@@ -5,28 +5,6 @@ library(readr)
 library(ggplot2)
 library(digest)
 library(mosaic)
-
-# Funkcija uvozi.zemljevid(url, ime.zemljevida, pot.zemljevida="",
-#                          mapa="../zemljevidi", encoding=NULL, force=FALSE)
-#
-# Funkcija najprej preveri, ali zemljevid na podani lokaciji že obstaja. Če
-# ne obstaja ali če je parameter force nastavljen na TRUE, pobere arhiv z
-# navedenega naslova in ga razširi. Nato uvozi zemljevid in ga vrne.
-#
-# Parametri:
-#   * url             Naslov URL, iz katerega naj dobimo arhiv z zemljevidom.
-#   * ime.zemljevida  Ime datoteke SHP brez končnice
-#   * pot.zemljevida  Pot do mape z datoteko SHP, kakršna je v pobranem arhivu
-#                     (privzeto prazna - vrhnja mapa arhiva).
-#   * mapa            Pot do mape, kamor naj se shrani zemljevid (privzeto
-#                     mapa "../zemljevid")
-#   * encoding        Kodiranje znakov v zemljevidu (privzeta vrednost
-#                     NULL, da se pretvorba ne opravi).
-#   * force           Ali naj se zemljevid v vsakem primeru pobere z navedenega
-#                     naslova (privzeta vrednost FALSE).
-#
-# Vrača:
-#   * zemljevid (SpatialPolygonsDataFrame) iz pobranega arhiva
 uvozi.zemljevid <- function(url, ime.zemljevida, pot.zemljevida="",
                             mapa="../zemljevidi", encoding=NULL, force=FALSE) {
   zgostitev <- digest(url, algo="sha1")
@@ -50,8 +28,8 @@ uvozi.zemljevid <- function(url, ime.zemljevida, pot.zemljevida="",
                                       function(x)
                                         paste(c(x[1:(length(x)-1)], tolower(x[length(x)])),
                                               collapse="."))))
-  zemljevid <- readOGR(pot, ime.zemljevida)
-
+  zemljevid <- readOGR(shp, ime.zemljevida)
+  
   if (!is.null(encoding)) {
     loc <- locale(encoding=encoding)
     for (col in names(zemljevid)) {
@@ -65,6 +43,3 @@ uvozi.zemljevid <- function(url, ime.zemljevida, pot.zemljevida="",
   return(zemljevid)
 }
 
-# Primer uvoza zemljevida (slovenske občine)
-# obcine <- uvozi.zemljevid("http://baza.fmf.uni-lj.si/OB.zip", "OB",
-#                           pot.zemljevida="OB", encoding="Windows-1250")

@@ -46,7 +46,8 @@ stevilo_novonastalih_podjetij <- melt(A, id.vars="regije", measure.vars=names(M)
 stevilo_zaposlenih_v_podjetjih <- melt(G, id.vars="regije", measure.vars=names(M)[-1], variable.name="leto", 
                          value.name="stevilozaposlenih", na.rm=TRUE)
 stevilo_podjetij_ki_so_prenehala_z_delovanjem <- melt(K, id.vars="regije", measure.vars=names(M)[-1], variable.name="leto", 
-                         value.name="stevilopropadlih", na.rm=TRUE)
+                               value.name="stevilopropadlih", na.rm=TRUE) %>% 
+                              mutate(stevilopropadlih = parse_integer(stevilopropadlih))
 stevilo_hitrorastocih_podjetij <- melt(F, id.vars="regije", measure.vars=names(F)[-1], variable.name="leto", 
                          value.name="stevilo", na.rm=TRUE)
 stevilo_brezposelnih <- melt(S, id.vars="regije", measure.vars=names(S)[-1], variable.name="leto", 

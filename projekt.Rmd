@@ -7,6 +7,7 @@ output:
     includes:
       in_header: lib/styles.sty
     latex_engine: xelatex
+runtime: shiny
 ---
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -81,7 +82,7 @@ Vir podatkov: [SURS](https://pxweb.stat.si/pxweb/Database/Regije/Regije.asp)
 Graf prikazuje število podjetij, ki so prenehala z delovanjem po regijah od leta 2008 do 2016:
 
 
-```{r stevilo_podjetij_ki_so_prenehala_z_delovanjem, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+```{r stevilo_podjetij_ki_so, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilopropadlih, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
 
 
@@ -141,6 +142,13 @@ graf4
 
 ```
 
+```{r analiza, echo=FALSE, message=FALSE, warning=FALSE}
+source("analiza/analiza.r", encoding="UTF-8")
+```
+
+```{r shiny, echo=FALSE, message=FALSE, warning=FALSE}
+shinyAppDir("shiny", options=list(width="100%", height=600))
+```
 
 
 

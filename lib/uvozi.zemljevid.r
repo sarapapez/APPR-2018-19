@@ -1,4 +1,5 @@
 # Uvoz potrebnih knjižnic
+library(rgeos)
 library(rgdal)
 library(dplyr)
 library(readr)

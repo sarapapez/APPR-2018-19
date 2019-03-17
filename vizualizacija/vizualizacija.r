@@ -1,6 +1,10 @@
 #začetni graf
 
-mojgraf1 <- ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, y=stevilopropadlih, group=regije, color=regije)) + geom_line() + xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+mojgraf1 <- ggplot(stevilo_podjetij_ki_so_prenehala_z_delovanjem, aes(x=leto, 
+            y=stevilopropadlih, group=regije, color=regije)) + geom_line() + 
+  xlab("Leto") + ylab("Število podjetij, ki so prenehala z delovanjem") + 
+  ggtitle("Graf števila propadlih podjetij") + scale_color_discrete(name="Regije", 
+  labels=c("Gorenjska", "Goriška", "Jugovzhodna Slovenija", "Koroška", "Obalno-kraška", "Osrednjeslovenska", "Podravska", "Pomurska", "Posavska", "Primorsko-notranjska", "Savinjska", "Zasavska")) + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
 
 
 
@@ -131,7 +135,8 @@ graf6 <- ggplot(hhhh) + geom_point(aes(x=stevilobrezposelnih, y=stevilopodjetij,
 # Create data
 data=data.frame(stevilo_novonastalih_podjetij)
 # Barplot
-graf7 <- ggplot(data, aes(x=leto, y=stevilonovonastalih)) + geom_bar(color="red",fill="red",stat = "identity")
+graf7 <- ggplot(data, aes(x=leto, y=stevilonovonastalih)) +  xlab("Leto") + ylab("Število novonastalih podjetij") + 
+  geom_bar(color="red",fill="red",stat = "identity")
 
 # Uvozimo zemljevid.
 zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",

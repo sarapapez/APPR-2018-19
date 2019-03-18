@@ -141,7 +141,9 @@ graf7 <- ggplot(data, aes(x=leto, y=stevilonovonastalih)) +  xlab("Leto") + ylab
 # Uvozimo zemljevid.
 zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
                              "SVN_adm1", mapa = "zemljevid_Slovenije", encoding = "UTF-8")
-zemljevid$NAME_1 <- c("Gorenjska", "Goriska","Jugovzhodna_Slovenija", "Koroska", "Primorsko-notranjska", "Obalno-kraska", "Osrednjeslovenska", "Podravska", "Pomurska", "Savinjska", "Posavska", "Zasavska")
-
+zemljevid$NAME_1 <- recode(zemljevid$NAME_1,
+                           "Spodnjeposavska"="Posavska",
+                           "Notranjsko-kraška"="Primorsko-notranjska") %>%
+  as.character() %>% factor()
 zemljevid <- fortify(zemljevid)   
 

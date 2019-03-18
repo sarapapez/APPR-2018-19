@@ -147,12 +147,16 @@ graf4
 source("analiza/analiza.r", encoding="UTF-8")
 ```
 
+V aplikaciji Shiny sem prikazala razvrščanje regij v skupine glede na število novonastalih podjetij, število hitrorastočih podjetij in število podjetij, ki so prenehala z delovanjem za leto 2014. Če izberemo 3 skupine takoj opazimo, da še vedno najbolj izstopa Osrednjeslovenska regija, saj je v skupini sama. To me ni presenetilo, saj je leta 2014 v Sloveniji delovalo okoli 186 000 podjetij. Tretjina teh podjetij je bila v Osrednjeslovenski regiji in ta podjetja so ustvarila 46 % prihodka vseh podjetij v Sloveniji.
+
+Program je v drugo skupino razvrstil Gorenjsko, Savinsjko, Podravsko in Obalno-kraško regijo. Tudi to sem pričakovala, saj sem tekom projekta pri branju člankov in analiziranju podatkov zasledila da imajo te regije največ hitrorastočih podjetij, prav tako pa tudi velik izvoz. Presenetilo me je, da Jugovzhodna regija ni bila razvščena v to skupino.
+
 ```{r shiny, echo=FALSE, message=FALSE, warning=FALSE}
 shinyAppDir("shiny", options=list(width="100%", height=600))
 ```
 
 
-
+V tem projektu sem ugotovila, da so si regije med sabo res različne. Vsem regijam v Sloveniji pa je skupno, da število podjetij povsod narašča. Glede na to, da je v gospodarstvu vse povezano je bilo za pričakovati, da vsi dejavniki vplivajo en na drugega.
 
 
 

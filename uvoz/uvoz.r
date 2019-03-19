@@ -14,10 +14,10 @@ A <- read_csv2("podatki/stevilo_novonastalih_podjetij1.csv", col_names=c("regije
 
 K <- read_csv2("podatki/stevilo_podjetij_ki_so_prenehala_z_delovanjem1.csv", col_names=c("regije", 2006:2016),
                skip=5, na="...", locale=locale(encoding="Windows-1250", 
-                                               decimal_mark = ",",
-                                               grouping_mark = "."),
-               n_max = 12)
-
+                                               decimal_mark=",",
+                                               grouping_mark="."),
+               col_types=cols(regije=col_character(), .default=col_number()),
+               n_max=12)
 F <- read_csv2("podatki/stevilo_hitrorastocih_podjetij1.csv", col_names=c("regije", 2006:2014),
                skip=5, na="...", locale=locale(encoding="Windows-1250", 
                                                decimal_mark = ",",
